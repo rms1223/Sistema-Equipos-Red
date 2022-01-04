@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{64460F55-5DEA-49D9-B8A9-24AA7A2558FB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FOD_Meraki</RootNamespace>
+    <AssemblyName>FOD_Meraki</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <CefSharpAnyCpuSupport>true</CefSharpAnyCpuSupport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clases\Api_Fod\Equipos_Redes_Fod.cs" />
+    <Compile Include="Clases\Api_Fod\Key.cs" />
+    <Compile Include="Clases\Api_Fod\Modelo\EquiposInfo.cs" />
+    <Compile Include="Clases\Api_Fod\Modelo\Local_Devices.cs" />
+    <Compile Include="Clases\Api_Fod\Modelo\ManejoArubaRequest.cs" />
+    <Compile Include="Clases\Api_Fod\Modelo\Manejo_Vistas.cs" />
+    <Compile Include="Clases\Api_Fod\Modelo\Network_Device.cs" />
+    <Compile Include="Clases\Api_Fod\Modelo\PingDevicesAruba.cs" />
+    <Compile Include="Clases\Cantiades_Equipos.cs" />
+    <Compile Include="Clases\CartelCE.cs" />
+    <Compile Include="Clases\Equipos_Asignados.cs" />
+    <Compile Include="Clases\Informacion.cs" />
+    <Compile Include="Clases\MailModel\Body_Mail.cs" />
+    <Compile Include="Clases\MailModel\Mail.cs" />
+    <Compile Include="Clases\MailModel\Procesar_Email.cs" />
+    <Compile Include="Clases\Notify\TelegramNotify.cs" />
+    <Compile Include="Fomularios\Aceptaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fomularios\Aceptaciones.Designer.cs">
+      <DependentUpon>Aceptaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fomularios\Consulta_CE_Cartel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fomularios\Consulta_CE_Cartel.Designer.cs">
+      <DependentUpon>Consulta_CE_Cartel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fomularios\Estandar_Puertos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fomularios\Estandar_Puertos.Designer.cs">
+      <DependentUpon>Estandar_Puertos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fomularios\FodApi\Buscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fomularios\FodApi\Buscar.Designer.cs">
+      <DependentUpon>Buscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fomularios\FodApi\DireccionamientoIp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fomularios\FodApi\DireccionamientoIp.Designer.cs">
+      <DependentUpon>DireccionamientoIp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fomularios\FodApi\EquiposCarteles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fomularios\FodApi\EquiposCarteles.Designer.cs">
+      <DependentUpon>EquiposCarteles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fomularios\FodApi\ExportDatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fomularios\FodApi\ExportDatos.Designer.cs">
+      <DependentUpon>ExportDatos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fomularios\FodApi\HerramientasAruba.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fomularios\FodApi\HerramientasAruba.Designer.cs">
+      <DependentUpon>HerramientasAruba.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fomularios\FodApi\Zonasaps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fomularios\FodApi\Zonasaps.Designer.cs">
+      <DependentUpon>Zonasaps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fomularios\Meraki\Herramientas_dispositivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fomularios\Meraki\Herramientas_dispositivos.Designer.cs">
+      <DependentUpon>Herramientas_dispositivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fomularios\Meraki\Listar_Redes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fomularios\Meraki\Listar_Redes.Designer.cs">
+      <DependentUpon>Listar_Redes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fomularios\Meraki\Redes_Locales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fomularios\Meraki\Redes_Locales.Designer.cs">
+      <DependentUpon>Redes_Locales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seguridad\Lectura_File.cs" />
+    <Compile Include="Seguridad\Seguriadad_Archivos.cs" />
+    <Compile Include="Seguridad\Var_Name.cs" />
+    <EmbeddedResource Include="Fomularios\Aceptaciones.resx">
+      <DependentUpon>Aceptaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fomularios\Consulta_CE_Cartel.resx">
+      <DependentUpon>Consulta_CE_Cartel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fomularios\Estandar_Puertos.resx">
+      <DependentUpon>Estandar_Puertos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fomularios\FodApi\Buscar.resx">
+      <DependentUpon>Buscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fomularios\FodApi\DireccionamientoIp.resx">
+      <DependentUpon>DireccionamientoIp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fomularios\FodApi\EquiposCarteles.resx">
+      <DependentUpon>EquiposCarteles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fomularios\FodApi\ExportDatos.resx">
+      <DependentUpon>ExportDatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fomularios\FodApi\HerramientasAruba.resx">
+      <DependentUpon>HerramientasAruba.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fomularios\FodApi\Zonasaps.resx">
+      <DependentUpon>Zonasaps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fomularios\Meraki\Herramientas_dispositivos.resx">
+      <DependentUpon>Herramientas_dispositivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fomularios\Meraki\Listar_Redes.resx">
+      <DependentUpon>Listar_Redes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fomularios\Meraki\Redes_Locales.resx">
+      <DependentUpon>Redes_Locales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="BouncyCastle">
+      <Version>1.8.3.1</Version>
+    </PackageReference>
+    <PackageReference Include="CefSharp.WinForms">
+      <Version>95.7.141</Version>
+    </PackageReference>
+    <PackageReference Include="DynamicLanguageRuntime">
+      <Version>1.3.0</Version>
+    </PackageReference>
+    <PackageReference Include="EntityFramework">
+      <Version>6.3.0</Version>
+    </PackageReference>
+    <PackageReference Include="Google.Protobuf">
+      <Version>3.11.4</Version>
+    </PackageReference>
+    <PackageReference Include="K4os.Compression.LZ4.Streams">
+      <Version>1.1.11</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Web.WebView2">
+      <Version>1.0.992.28</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Windows.SDK.Contracts">
+      <Version>10.0.18362.2005</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="SSH.NET">
+      <Version>2016.1.0</Version>
+    </PackageReference>
+    <PackageReference Include="Stub.System.Data.SQLite.Core.NetFramework">
+      <Version>1.0.113.3</Version>
+    </PackageReference>
+    <PackageReference Include="System.Buffers">
+      <Version>4.5.1</Version>
+    </PackageReference>
+    <PackageReference Include="System.Data.SQLite">
+      <Version>1.0.113.7</Version>
+    </PackageReference>
+    <PackageReference Include="System.Runtime.WindowsRuntime">
+      <Version>4.6.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Runtime.WindowsRuntime.UI.Xaml">
+      <Version>4.6.0</Version>
+    </PackageReference>
+    <PackageReference Include="Telegram.Bot">
+      <Version>15.7.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
